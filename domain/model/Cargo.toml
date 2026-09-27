@@ -1,0 +1,13 @@
+[package]
+name = "model"
+description = "Application domain and ports"
+edition.workspace = true
+version.workspace = true
+publish.workspace = true
+readme = "../../README.md"
+
+[lib]
+path = "lib.rs"
+
+[lints]
+workspace = true

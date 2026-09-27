@@ -1,0 +1,101 @@
+[package]
+name = "untitled"
+description = "Rust workspace template"
+edition.workspace = true
+version.workspace = true
+publish.workspace = true
+readme = "README.md"
+
+[lib]
+name = "lib"
+
+[workspace]
+members = ["domain/model"]
+resolver = "3"
+
+[workspace.package]
+edition = "2024"
+version = "0.1.0"
+publish = false
+
+[dependencies]
+model = { path = "domain/model" }
+
+[lints]
+workspace = true
+
+[workspace.lints.rust]
+rust_2018_idioms = { level = "warn", priority = -1 }
+# To use the `unsafe` keyword, do not remove the `unsafe_code = "forbid"` entry.
+# Instead, prefer to change it to `unsafe_code = "deny"` + opt-in with local use of
+# `#[allow(unsafe_code)]`'s on an as needed basis.
+bare_trait_objects = "forbid"
+unsafe_code = "deny"
+unused_variables = "warn"
+
+# Uncomment before ship to reconcile use of possibly redundant crates, debug remnants, missing
+# license files and more
+#dead_code = "warn"
+#missing_docs = "warn"
+#warnings = "deny"
+
+[workspace.lints.clippy]
+# Safety-critical application lints
+pedantic = { level = "deny", priority = -1 }
+float_cmp_const = "deny"
+indexing_slicing = "deny"
+arithmetic_side_effects = "deny"
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
+todo = "deny"
+unimplemented = "deny"
+
+all = { level = "warn", priority = -1 }
+nursery = { level = "warn", priority = -1 }
+# End of safety-critical application lints
+
+arbitrary_source_item_ordering = "allow"
+absolute_paths = "allow"
+doc_markdown = "allow"
+doc_paragraphs_missing_punctuation = "allow"
+enum_glob_use = "deny"
+enum_variant_names = "allow"
+equatable_if_let = "allow"
+error_impl_error = "allow"
+exhaustive_structs = "allow"
+implicit_return = "allow"
+integer_division_remainder_used = "allow"
+iter_nth_zero = "allow"
+let_underscore_untyped = "allow"
+manual_async_fn = "allow"
+match_bool = "allow"
+min_ident_chars = "allow"
+missing_errors_doc = "allow"
+missing_inline_in_public_items = "allow"
+missing_trait_methods = "allow"
+module_name_repetitions = "allow"
+multiple_crate_versions = "allow"
+obfuscated_if_else = "allow"
+pattern_type_mismatch = "allow"
+print_stdout = "deny"
+print_stderr = "deny"
+pub_use = "allow"
+pub_with_shorthand = "allow"
+question_mark_used = "allow"
+redundant_test_prefix = "allow"
+result_large_err = "allow"
+self_named_module_files = "allow"
+separated_literal_suffix = "allow"
+shadow_reuse = "allow"
+shadow_unrelated = "allow"
+similar_names = "allow"
+single_call_fn = "allow"
+single_match_else = "allow"
+too_long_first_doc_paragraph = "allow"
+
+# Uncomment before ship to reconcile use of possibly redundant crates, debug remnants, missing
+# license files and more
+#blanket_clippy_restriction_lints = "allow"
+#cargo = { level = "warn", priority = -1 }
+#restriction = { level = "warn", priority = -1 }
