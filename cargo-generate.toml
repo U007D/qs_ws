@@ -1,0 +1,4 @@
+[template]
+cargo_generate_version = ">=0.23.3"
+include = ["Cargo.toml", "README.md"]
+ignore = ["Cargo.lock", "target", ".idea", ".DS_Store", "AGENTS.md", "CLAUDE.md", "SKILLS.md"]

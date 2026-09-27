@@ -1,7 +1,5 @@
 //! Application composition and greeting.
 
-pub mod adapter;
-
 pub use model;
 
 /// Print the template greeting.
